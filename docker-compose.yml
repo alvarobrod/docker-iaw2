@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mysql:
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=asdasd
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_DATABASE=bookmedik
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  bookmedik:
+    image: alvarobrod/bookmedik
+    ports:
+      - 80:80
+    depends on:
+      - mysql
