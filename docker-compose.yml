@@ -14,5 +14,7 @@ services:
     image: alvarobrod/bookmedik
     ports:
       - 80:80
+    volumes:
+      - ./logs:/var/log/apache2
     depends on:
       - mysql
