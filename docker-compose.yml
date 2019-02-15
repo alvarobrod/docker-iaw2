@@ -9,6 +9,7 @@ services:
       - MYSQL_DATABASE=bookmedik
     volumes:
       - /mnt/mysql:/var/lib/mysql
+    container_name: bd
 
   bookmedik:
     image: alvarobrod/bookmedik
@@ -22,3 +23,4 @@ services:
       - /mnt/logs:/var/log/apache2
     links:
       - mysql
+    container_name: php
