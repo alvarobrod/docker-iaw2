@@ -8,13 +8,13 @@ services:
       - MYSQL_PASSWORD=admin
       - MYSQL_DATABASE=bookmedik
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./mnt/mysql:/var/lib/mysql
 
   bookmedik:
     image: alvarobrod/bookmedik
     ports:
       - 80:80
     volumes:
-      - ./logs:/var/log/apache2
+      - ./mnt/logs:/var/log/apache2
     links:
       - mysql
